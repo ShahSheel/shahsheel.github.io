@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html>
+<!--<![endif]-->
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Glint</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+<body id="top">
+<section id='blog' class="blog">
+
+ <div class="row services-list block-1-2 block-tab-full">
+<!-- Blog
+=========================================== --> 
+<h1> Full-Stack Job recommendation website</h1>
+<h5>Posted: 25th May 2018</h5>
+     <h5>Project URL: <a href = "http://www.jobapplier.co.uk">http://www.jobapplier.co.uk </a></h5>
+<h3> Problem Factor</h3>
+<p> Whilst being a university student, over 150 job applications are needed for a temporal placement to gain at least 5 interviews [1] and over 27 job applications for non-university students to obtain at least 1 interview [2]. Many people start claiming JSA whilst being unemployed for many weeks till they can find a job. After all the work of applying to receive perhaps at last least 1 interview; they have a high potential to suffer from depression if they are rejected. The current existing services recommend you jobs, which are nowhere near you live, jobs that are not in your specialised area or jobs that are beyond your skill areas. Moreover, some require too much time to increase the accuracy for jobs related to you. From my perspective, this is a time-consuming task for a job that you may not be accepted at. Henceforth, I have developed “Job Recommender” as a solution to this problem. A fullstack website that will let the user register, enter the job role and location desired, upload a CV and wait for job recommendations provided by CareerJet API. The website will not require personal information apart from the users desired job location and their CV. After this step, it redirects you to job recommendation page, where it displays the users recommended jobs.  What makes this website different from the others is that the location will be added towards the job roles and a different Natural Language Technique is used. </p>
+    
+
+<img src = "images/jobReco/usecase.PNG" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
+<center><caption> Figure 1: Layout of the website </caption> </center>
+     
+<h3>Natural Languge Technique</h3>
+<p>Many websites perform a keyword matching or profile matching(Linkedin as an example) - which yields inaccurate results, as mentioned why. So on top of the location system, pre-processing and keyword matching was used. Previous attempts, such as <a href = "https://en.wikipedia.org/wiki/Named-entity_recognition">Named Entity Recognition</a> was tried but this gave poor results.</p>
+    
+<h4>Pre-processing</h4>
+     <p>Firstly, personal data needed to be removed from the CV. This was done using <a href = "https://en.wikipedia.org/wiki/Regular_expression">REGEX</a>. The next step is to add some <a href = "https://en.wikipedia.org/wiki/Part-of-speech_tagging">Pos Tagged words</a> to a stopwords list(Provided by the Oxford Dictionary Corupus). Pos Tagging allows to identity the word type in a sentence. In this case, if the Word type is "SYM" then it's a symbol word and is removed! </p>
+<code>  for word, pos in tokenise: 
+        if pos == 'IN':
+            stopwords.add(word)
+        if pos == 'DT':
+            stopwords.add(word)
+        if pos == 'PRP':
+            stopwords.add(word)
+        if pos == 'CC':
+            stopwords.add(word)
+        if pos == 'IT':
+            stopwords.add(word)
+        if pos == "PRP$":
+            stopwords.add(word)
+        if pos == "SYM":
+            stopwords.add(word)
+        if pos == "TO":
+            stopwords.add(word)
+        if pos == "RB":
+            stopwords.add(word)
+    
+</code>
+
+<h4>Matching</h4>
+The matching system is easy. It firstly compares the set of cv words that are in job description words, after pre-processing. After this, it calculates the match score by the number of length of of the number of words matched divided by the sum of cv words and job description words. The top 5 matches, are then displayed on the website for the user.
+     
+<img src = "images/jobReco/cases.PNG" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
+<center><caption> Figure 2: Comparing CV words against Job Description Words </caption> </center>
+     
+<img src = "images/jobReco/matches.PNG" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
+<center><caption> Figure 3: Calculating the percentage of the comparinson </caption> </center>
+    <h3>References:</h3>
+       <p> [1] Smith, M. (2017). You now have to apply for 27 jobs just to get 1 interview. [online]<br> 
+    Business Insider. Available at: http://uk.businessinsider.com/job-seekers-have-to-applyfor-27-jobs-for-every-interview-survey-finds [Accessed 16 Oct. 2017]. <br> 
+    [2] The Student Room. (2017). For employed people: How many jobs did you apply for until you finally got one?. [online] Available at: https://www.thestudentroom.co.uk/showthread.php?t=2458155 [Accessed 16 Oct. 2017]. <br> 
+    [3] Quora. (2018). What is linkedins Technology Stack. [online] Available at: https://www.quora.com/What-is-LinkedIns-technology-stack [Accessed 5 Nov. 2017]. <br> 
+    </p>
+
+    </div>
+    </section>
+    <!-- footer
+    ================================================== -->
+    <footer>
+
+        <div class="row footer-main">
+
+            <div class="col-six tab-full left footer-desc">                
+            </div>
+
+        </div> <!-- end footer-main -->
+
+        <div class="row footer-bottom">
+
+            <div class="col-twelve">
+                <div class="copyright">
+                    <span>© Copyright Sheel Shah 2018</span> 
+                </div>
+
+                <div class="go-top">
+                    <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+        </div> <!-- end footer-bottom -->
+
+    </footer> <!-- end footer -->
+
+
+    <!-- photoswipe background
+    ================================================== -->
+    
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>    
+</body>
+</html>

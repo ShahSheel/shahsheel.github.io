@@ -74,7 +74,6 @@ html, body {
 }
 
 body {
-    background: #111111;
     font-family: "lora-regular", serif;
     font-size: 1.7rem;
     font-style: normal;
@@ -120,7 +119,6 @@ h1, h2, h3, h4, h5, h6,
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     margin-top: 6rem;
-    margin-bottom: 1.8rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -130,7 +128,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 h5, .h5, h6, .h6 {
-    margin-top: 4.2rem;
     margin-bottom: 1.5rem;
 }
 
@@ -289,6 +286,9 @@ code {
     background: #F1F1F1;
     border: 1px solid #E1E1E1;
     border-radius: 3px;
+    display: -webkit-inline-box;
+    white-space: pre-wrap; 
+
 }
 
 pre > code {
@@ -2359,6 +2359,53 @@ html.no-csstransitions .home-content__main {
     .stats__count {
         font-size: 7.8rem;
     }
+}
+
+/* ===================================================================
+ * # Blog
+ *
+ * ------------------------------------------------------------------- */
+.blog {
+    padding-top: 0.rem;
+    padding-bottom: 13.2rem;
+    background-color: #FFFFFF;
+    color: #757575;
+    position: relative;
+}
+
+
+/* ------------------------------------------------------------------- 
+ * ## Blog list
+ * ------------------------------------------------------------------- */
+.blog-list {
+    margin-top: 6rem;
+}
+
+.blog-list .service-item {
+    margin-bottom: .9rem;
+}
+
+.blog-list .service-item h3 {
+    margin-top: 0;
+}
+
+.blog-list .service-item:nth-child(2n+1) {
+    padding-right: 50px;
+}
+
+.blog-list .service-item:nth-child(2n+2) {
+    padding-left: 50px;
+}
+
+.blog-list .service-text {
+    margin-left: 7.8rem;
+}
+
+.blog-list .service-icon {
+    float: left;
+    color: #39b54a;
+    font-size: 4.8rem;
+    margin-top: -.6rem;
 }
 
 

@@ -804,6 +804,17 @@
 .fa-linkedin:before {
   content: "\f0e1";
 }
+
+.fa-robot:before {
+  content: "\f183";
+}
+
+
+.fa-eye:before {
+  content: "\f06e";
+}
+
+
 .fa-rotate-left:before,
 .fa-undo:before {
   content: "\f0e2";
@@ -2035,6 +2046,11 @@
 .fa-credit-card-alt:before {
   content: "\f283";
 }
+
+.fa-handshake:before{
+    content: "\f2b5";
+}
+
 .fa-codiepie:before {
   content: "\f284";
 }
