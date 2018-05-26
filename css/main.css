@@ -3406,7 +3406,8 @@ footer {
     font-size: 15px;
     line-height: 2;
     text-align: center;
-    color: rgba(255, 255, 255, 0.3);
+    color: white;
+    background-color: black;
 }
 
 footer h4 {
