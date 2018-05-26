@@ -280,6 +280,10 @@
 .fa-list-alt:before {
   content: "\f022";
 }
+.fa-angle-left:before {
+  content: "\f022";
+}
+
 .fa-lock:before {
   content: "\f023";
 }

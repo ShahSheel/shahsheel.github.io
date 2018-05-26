@@ -384,6 +384,28 @@ dd {
 }
 
 
+/*------------------------------------------------------------------
+ *## Navbar
+ *------------------------------------------------------------------*/
+.main-nav-bar{
+    position: relative;
+    padding: 35px 40px;
+    margin: 0 0 30px 0;
+}
+
+/** button hover */
+
+.button-hover{
+    border-color: #bfc8cd;
+    color: #9EABB3;
+    
+}
+
+.button-hover:hover{
+   border-style: solid;
+    border-color: #bfc8cd;
+    color: #9EABB3;
+}
 /* ------------------------------------------------------------------- 
  * ## responsive video container
  * ------------------------------------------------------------------- */
@@ -803,8 +825,9 @@ input[type="button"] {
     cursor: pointer;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background-color: #c5c5c5;
-    border: .2rem solid #c5c5c5;
+    background-color: #c5c5c500 !important;
+    border: .2rem solid #c5c5c500;
+    border-radius: 4px;
 }
 
 .btn:hover,
@@ -818,7 +841,7 @@ input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
     background-color: #b8b8b8;
-    border-color: #b8b8b8;
+    border-color: #ada9a9bf;
     color: #000000;
     outline: 0;
 }
