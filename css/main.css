@@ -2807,13 +2807,10 @@ html.no-csstransitions .home-content__main {
 }
 
 /** Disqus **/
-
-
-#disqus_thread { 
-    width: 640px;
-    max-width: 100%;
-    margin: 0 auto; 
-    padding: 18px; 
+.comments {
+		width: 50%;
+		margin-left: auto;
+        margin-right: auto;
 }
 
 
