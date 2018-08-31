@@ -2807,10 +2807,10 @@ html.no-csstransitions .home-content__main {
 }
 
 /** Disqus **/
-	.comments {
+.comments {
 		width: 70%;
 		margin-left: auto;
-	}
+}
 
 
 /* ===================================================================
