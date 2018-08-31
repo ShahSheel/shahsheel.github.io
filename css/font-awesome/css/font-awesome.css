@@ -813,6 +813,10 @@
   content: "\f183";
 }
 
+.fa-cuttlefish:before{
+    content: "\f38c";
+}
+
 
 .fa-eye:before {
   content: "\f06e";
