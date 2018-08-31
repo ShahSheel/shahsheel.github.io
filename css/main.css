@@ -2806,6 +2806,11 @@ html.no-csstransitions .home-content__main {
     }
 }
 
+/** Disqus **/
+	.comments {
+		width: 70%;
+		margin-left: auto;
+	}
 
 
 /* ===================================================================
