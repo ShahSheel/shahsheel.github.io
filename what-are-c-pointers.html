@@ -86,14 +86,66 @@
 <p>
 Instead of claiming the memory up-front by doing array[50], the memory is allocated (from the heap) while the program is running. So the exact amount of memory is claimed and there is no waste. Even better, memory not used will be returned to the heap. (Freed memory can be used for other programs).
 </p>
-<script src="//onlinegdb.com/embed/js/SkgTZevU_m?theme=dark"></script>
+<p>
+<code>
+#include &ltstdio.h>
+
+int main ()
+{
+  int i, x;
+  int capacity = 5;		//initial capacity;
+  int used = 0;			// No. of elements inserted so far
+  int *arr = (int *) malloc (sizeof (int) * capacity);
+
+  for (i = 0; i < 10; i++)	// now suppose you want to insert 10 elements
+    {
+      scanf ("%d", &x);
+      if (used == capacity)
+	{
+	  capacity *= 2;	// double the capacity of array
+	  arr = (int *) realloc (arr, sizeof (int) * capacity);
+	}
+      arr[used] = x;
+      used++;
+    }
+  for (i = 0; i < 10; i++)
+    printf ("%d ", arr[i]);
+  free (arr);
+}
+</code>
+</p>
 <br/>
 We don't use pointers for arrays only, in fact we use it for nearly every data-structure such as binary trees - which also is a great data structure to learn pointers!. 
 <h4>To pass and handle variable parameters passed to functions.</h4>
     <p>If you have seen other tutorials and pages, this is generally referred to <i>Pointers as variables</i>. But they only show examples of the program as a main(Which to me does not help!). </p>
     <p> 
 So basically, we use pointers as parameters <i>for</i> the variables. (Passing the address value to a pointer parameter which then stores a new value).  </p>
-<script src="//onlinegdb.com/embed/js/r1ojJP8dm?theme=dark"></script>
+<p><
+<code>
+#include &ltstdio.h>
+
+void printInput (int *input1, int *input2);
+
+int main ()
+{
+
+  int a, b;
+  printInput (&a, &b);		//Pass the address
+  return 0;
+}
+
+void printInput (int *input1, int *input2)
+{				//Get the value of a and b (0 and 0), essentially *input1 = &a
+  printf ("a \t b");
+  printf ("\n %d \t %d ", *input1, *input2);	//Print the values
+  printf ("\nEnter input, with a space between: ");
+  scanf ("%d %d", input1, input2);	// Store the values in the address
+  printf ("\n %d \t %d ", *input1, *input2);	//Print the new values
+
+}
+
+</code>
+</p>
 <h4> To access information stored in arrays.</h4>
 <p>
 Instead of doing the popular convention <i>a[3]</i> we can instead access the array by using a pointer. You may be thinking, why do we do that? Well - lets take a look back at why we use pointers.
@@ -106,9 +158,27 @@ If you havn't guessed yet, we are now moving onto the "speed part". When we acce
 </p>
         
 It is faster to point to the array rather than having the array to access memory every time and then sort it.
+<p>
+<code>
+#include &ltstdio.h>
+int main ()
+{
+  int i, classes[6], sum = 0;
+  printf ("Enter 6 numbers:\n");
+  for (i = 0; i < 6; ++i)
+    {
+      // (classes + i) is equivalent to &classes[i]
+      scanf ("%d", (classes + i));
 
-<script src="//onlinegdb.com/embed/js/By4MxvLOX?theme=dark"></script>
+      // *(classes + i) is equivalent to classes[i]
+      sum += *(classes + i);
+    }
+  printf ("Sum = %d", sum);
+  return 0;
+}
 
+</code>
+</p>
 <br/>
 <p>You can download this programs from my GitHub: <a>https://github.com/ShahSheel/C-Pointers-TUT</a></p>
 </div>
@@ -143,7 +213,6 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-        
 
         <div class="row footer-main">
 
