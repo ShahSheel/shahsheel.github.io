@@ -1659,6 +1659,15 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     left: 0;
 }
 
+.icons{
+    text-align: center;
+}
+
+.icon {
+    font-size: 75pt;
+    display: inline-block;
+    margin: 0px 3% 20px 3%;
+}
 
 /* ------------------------------------------------------------------- 
  * ## mobile menu toggle 
