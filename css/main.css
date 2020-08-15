@@ -1951,20 +1951,21 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .home-social i {
-    font-size: 14px;
+    font-size: 30px;
     right: 0;
     text-align: center;
     display: inline-block;
     width: 33px;
     height: 33px;
     line-height: calc(33px - 4px);
-    border: 2px solid #FFFFFF;
-    border-radius: 50%;
+    /* border: 2px solid #FFFFFF; */
+    /* border-radius: 50%; */
 }
 
 .home-social span {
     color: #ffffff;
-    right: 4.5rem;
+    top: 3.5rem;
+    right: 1rem;
     font-size: 1.3rem;
     opacity: 0;
     visibility: hidden;
@@ -1974,6 +1975,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     -webkit-transform-origin: 100% 50%;
     -ms-transform-origin: 100% 50%;
     transform-origin: 100% 50%;
+
 }
 
 .home-social li:hover span {
