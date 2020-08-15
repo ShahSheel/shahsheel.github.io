@@ -29,19 +29,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link rel="stylesheet" href="css/font-awesome/css/v4-shims.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
 
 
 
-
-    <!-- script
-    ================================================== -->
-    <script src="js/modernizr.js"></script>
-    <script src="js/pace.min.js"></script>
-    
+        
     <!-- favicons
     ================================================== -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -49,30 +44,36 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 </head>
 
-<body id="top">
+<body>
 
 
     <!-- home
     ================================================== -->
-    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="images/brudge.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
-
-        <div class="overlay"></div>
-        <div class="shadow-overlay"></div>
-
+    <div id="particles-js"></div>
+    <home>
+      <div class="overlay"></div>
         <div class="home-content">
-
-            <div class="row home-content__main">
-
+            <div class="row home-content__main" style="text-align:center">
                 <h3>Sheel Shah</h3>
-
-                <h1>
-                   Portfolio <br>
-                </h1>
-
+            <div class="container py-5">
+                <div class="output" id="output">
+                    <h1 class="cursor"></h1>
+                    <p></p>
+                </div>
+                </div>
                 <p style= "color: white;">
-             I am a university graduate from University Of Sussex, with a degree in Computer Science. My main goal is to help people as much as I can. You can see projects that I have developed with tutorials and demos (if avaliable) below as well as articles. 
+             <!-- I am a university graduate from University Of Sussex, with a degree in Computer Science. My main goal is to help people as much as I can. You can see projects that I have developed with tutorials and demos (if avaliable) below as well as articles.  -->
                 </p>
-
+        <ul class="home-social">
+            <li>
+                <a href="http://www.linkedin.com/in/sheelrshah">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i><span>Linkedin</span></a>
+            </li>
+            <li>
+                <a href="http://github.com/shahsheel"><i class="fa fa-github" aria-hidden="true"></i><span>GitHub</span></a>
+            </li>
+        </ul> 
+        
                 <div class="home-content__buttons">
                     <a href="#services" class="smoothscroll btn btn--stroke">
                        Projects
@@ -96,19 +97,10 @@
         </div> <!-- end home-content -->
 
 
-        <ul class="home-social">
-            <li>
-                <a href="http://www.linkedin.com/in/sheelrshah">
-                    <i class="fa fa-linkedin" aria-hidden="true"></i><span>Linkedin</span></a>
-            </li>
-            <li>
-                <a href="http://github.com/shahsheel"><i class="fa fa-github" aria-hidden="true"></i><span>GitHub</span></a>
-            </li>
-        </ul> 
         <!-- end home-social -->
+    </home>
 
-    </section> <!-- end s-home -->
-
+</div>
     <!-- projects
     ================================================== -->
     <section id='services' class="s-services">
@@ -282,9 +274,13 @@
     
     <!-- Java Script
     ================================================== -->
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+    
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script  language="JavaScript" type="text/javascript" src="js/typewriter.js"></script>
 
 </body>
 
