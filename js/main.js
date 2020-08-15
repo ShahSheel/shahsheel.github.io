@@ -451,7 +451,7 @@
     * ------------------------------------------------------ */
     (function ssInit() {
         
-        clPreloader();
+       // clPreloader();
         clMenuOnScrolldown();
         clOffCanvas();
         clPhotoswipe();
